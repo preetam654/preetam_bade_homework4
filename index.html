@@ -132,14 +132,40 @@
     display: flex;
     align-items: center; /* Align checkbox and text vertically */
   }
+  .index {
+  margin: 2% auto; /* Centers the div horizontally and adds a vertical margin */
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: center; /* Center child elements horizontally */
+  justify-content: center; /* Center child elements vertically */
+  text-align: center; /* Center text inside the div */
+  background-color: white; /* Sets the background color */
+  border-radius: 10px; /* Adds rounded corners */
+  max-width: 80vw; /* Restricts the maximum width to 80% of the viewport */
+  padding: 20px; /* Adds internal spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for better visibility */
+}
+
+
+  .index > ul {
+  list-style-type: none; /* Removes bullet points */
+  text-align: left; /* Aligns text to the left */
+  margin: 0; /* Removes default margin around the list */
+  padding: 0; /* Removes default padding around the list */
+  width: 100%; /* Ensures the list spans the full width of its container */
+}
+#feedback{
+  height: 10vw;
+}
+ 
     </style>
   </head>
   <body>
     <div class="container">
         <h1>Welcome to my Homepage</h1>
        <form id="Personal Info">
-      <div class="field">
-          <h2 style="text-align: left; color: blue;">Personal Info</h2>
+         <div class="field">
+        <h2 style="text-align: left; color: blue;">Personal Info</h2>
         <label for="firstName">First Name</label>
         <input
           type="text"
@@ -275,25 +301,24 @@ The Cybersecurity program at SRH Berlin University of Applied Sciences has been 
           the practical training and decide</label
         >
       </fieldset>
-
-      </textarea>
+      
+    
+    <button type="submit">Submit</button>
   </div>
-  <button type="submit">Submit</button>
 </form>
-
-<section id="message" style="display: none; margin-top: 20px; color: green;">
-  Form has been submitted successfully!
-</section>
+<div class="index">
+   <h2>Index</h2>
   <ul>
-    <li><a href="#SDLC">SDLC Methodologies</a></li>
-    <li><a href="#concepts">Course Concepts</a></li>
-    <li><a href="#software development">software development</a></li>
-    <li><a href="#CSS in Web Development">CSS in Web Development</a></li>
-    <li><a href="#JavaScript">JavaScript in Web Development</a></li>
-    <li><a href="#Contact">Contact</a></li>
-  </ul>
-</nav>
-    </section>
+      <li><a href="#SDLC">SDLC Methodologies</a></li>
+      <li><a href="#concepts">Course Concepts</a></li>
+      <li><a href="#software development">software development</a></li>
+      <li><a href="#CSS in Web Development">CSS in Web Development</a></li>
+      <li><a href="#JavaScript">JavaScript in Web Development</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    </ul>
+
+
+</div>
 
     <!-- New Section Added Below the Form -->
     <section id="SDLC">
@@ -449,10 +474,10 @@ The Cybersecurity program at SRH Berlin University of Applied Sciences has been 
             ];
 
             fieldsToValidate.forEach((field) => {
-              const input = form.querySelector(`#${field.id}`);
+              const input = form.querySelector(#${field.id});
               if (input && !input.checkValidity()) {
                 isValid = false;
-                errorMessage += `${field.label} is invalid.\n`;
+                errorMessage += ${field.label} is invalid.\n;
               }
             });
 
@@ -483,5 +508,6 @@ The Cybersecurity program at SRH Berlin University of Applied Sciences has been 
             }
           });
       });
+    </script>
   </body>
 </html>
