@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Feedback Form</title>
+    <style>
+      h1,
+      h2 {
+        text-align: center;
+        color: #3a3a7b;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background: linear-gradient(135deg, #f9f7fc, #d0d7ff);
+      }
+
+      form {
+        max-width: 80vw;
+        margin: auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #4f4f70;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #7b7ffb;
+        box-shadow: 0 0 5px rgba(123, 127, 251, 0.6);
+        outline: none;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        width: auto;
+        margin-right: 5px;
+      }
+
+      button {
+        background: linear-gradient(45deg, #6a6bf5, #4a6dfb);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      button:hover {
+        background: linear-gradient(45deg, #4a6dfb, #3a4bf7);
+      }
+
+      .field {
+        flex: 1 1 calc(50% - 20px);
+        margin: 2px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .full-width {
+        flex: 1 1 100%;
+      }
+
+      fieldset {
+        border: 2px solid #6a6bf5;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 10px;
+        flex: 1 1 100%;
+      }
+
+      legend {
+        font-size: 1.1rem;
+        color: #3a3a7b;
+      }
+
+      section {
+        margin: 20px auto;
+        max-width: 87%;
+        background: linear-gradient(135deg, #ffffff, #f2f3ff);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      ul {
+        color: #4f4f70;
+      }
+
+      p {
+        color: #595978;
+      }
+
+      input[placeholder]::placeholder {
+        color: #aaa;
+        font-style: italic;
+      }
+
+      input:invalid {
+        border-color: #f56565;
+      }
+      .checkbox-container {
+    display: flex;
+    gap: 20px; /* Adjust spacing between checkboxes */
+  }
+  label {
+    display: flex;
+    align-items: center; /* Align checkbox and text vertically */
+  }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Welcome to my Homepage</h1>
+          <h2 style="text-align: left; color: blue;">Personal Info</h2>
+    <form id="Personal Info">
+      <div class="field">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          required
+          pattern="[A-Za-z]+"
+          title="Only alphabetic characters allowed"
+          value="Preetam"
+        />
+      </div>
+      <div class="field">
+        <label for="middleInitial">Middle Initial</label>
+        <input
+          type="text"
+          id="middleInitial"
+          name="middleInitial"
+          pattern="[A-Za-z]+"
+          title="Only alphabetic characters allowed"
+          value=""
+        />
+      </div>
+
+      <div class="field">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          required
+          pattern="[A-Za-z]+"
+          title="Only alphabetic characters allowed"
+          value="Bade"
+        />
+      </div>
+
+      <!-- Matriculation -->
+      <div class="field">
+        <label for="matriculation">Matriculation Number</label>
+        <input
+          type="text"
+          id="matriculation"
+          name="matriculation"
+          required
+          pattern="\d+"
+          title="Only numeric characters allowed"
+          value="100003316"
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          value="100003316@stud.srh-university.de"
+        />
+      </div>
+
+      <!-- Country -->
+      <div class="field">
+        <label for="country">Country</label>
+        <select id="country" name="country" required>
+          <option value="">-- Select Country --</option>
+          <option value="Germany">Germany</option>
+          <option selected value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Start Date -->
+      <div class="field">
+        <label for="startDate">Start Date</label>
+        <input
+          type="date"
+          id="startDate"
+          name="startDate"
+          required
+          value="2024-10-01"
+        />
+      </div>
+
+      <!-- Graduate Program -->
+      <div class="field">
+        <label for="graduateProgram">Graduate Program</label>
+        <select id="graduateProgram" name="graduateProgram" required>
+          <option value="">-- Select Program --</option>
+          <option selected value="CS">CyberSecurity</option>
+          <option value="SE">Artificial Intelligence</option>
+          <option value="DS">Big Data</option>
+        </select>
+      </div>
+
+      <!-- Feedback -->
+      <div class="full-width">
+  <label for="feedback">Feedback</label>
+  <textarea
+    id="feedback"
+    name="feedback"
+    required
+    placeholder="Share your thoughts about the course..."
+  >
+The Cybersecurity program at SRH Berlin University of Applied Sciences has been an excellent learning experience. The curriculum is well-structured and focuses on both theoretical and practical aspects of cybersecurity. The hands-on projects and real-world case studies have been instrumental in developing my technical skills in areas like network security, cryptography, and ethical hacking. The program also emphasizes critical thinking and problem-solving, which are essential in tackling modern security challenges. The professors bring a wealth of knowledge and industry experience, making the classes engaging and insightful. Additionally, the multicultural environment and collaborative opportunities have broadened my perspective, preparing me to excel in global cybersecurity roles.
+  </textarea>
+</div>
+      <!-- Sources and Future Plans -->
+      <fieldset>
+  <legend>I've heard this graduate program from:</legend>
+  <div class="checkbox-container">
+    <label><input type="checkbox" name="source" value="media" /> Media</label>
+    <label><input type="checkbox" name="source" value="agency" /> Agency</label>
+    <label><input type="checkbox" name="source" value="ad" /> Ad</label>
+    <label><input type="checkbox" name="source" checked value="other" /> Other</label>
+  </div>
+</fieldset>
+
+      <fieldset>
+        <legend>When I finish my study, I will:</legend>
+        <label
+          ><input type="checkbox" name="future" value="return" /> Return to my
+          country</label
+        ><br />
+        <label
+          ><input type="checkbox" name="future" checked value="job" /> Find a job in
+          Europe</label
+        ><br />
+        <label
+          ><input type="checkbox" name="future" value="training"  /> Do
+          the practical training and decide</label
+        >
+      </fieldset>
+
+      </textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<section id="message" style="display: none; margin-top: 20px; color: green;">
+  Form has been submitted successfully!
+</section>
+  <ul>
+    <li><a href="#SDLC">SDLC Methodologies</a></li>
+    <li><a href="#concepts">Course Concepts</a></li>
+    <li><a href="#software development">software development</a></li>
+    <li><a href="#CSS in Web Development">CSS in Web Development</a></li>
+    <li><a href="#JavaScript">JavaScript in Web Development</a></li>
+    <li><a href="#Contact">Contact</a></li>
+  </ul>
+</nav>
+    </section>
+
+    <!-- New Section Added Below the Form -->
+    <section id="SDLC">
+
+      <h2>Software Development Life Cycle (SDLC) Methodologies</h2>
+      <p>
+        I will write a paragraph for each methodology of SDLC. There are many of them, but I will suggest a few. My suggestions and reasons are as follows:
+      </p>
+      <ul>
+        <li>
+          <strong>A)</strong> Waterfall Model:The Waterfall Model is a linear and sequential approach to software development where the project is divided into distinct phases, each with specific deliverables and objectives. The process flows in one direction, resembling a waterfall, and each phase must be completed before moving to the next. The key phases include requirements gathering and analysis, system design, implementation (coding), testing, deployment, and maintenance. This model emphasizes thorough documentation at every stage and is best suited for projects with well-defined and stable requirements. While the Waterfall Model is easy to understand and manage, its rigidity makes it less suitable for projects where requirements may evolve over time.
+        </li>
+        <li>
+          <strong>B)</strong> Iterative Model:The Iterative Model is a software development approach where the project is developed in small, manageable cycles called iterations. Each iteration goes through a complete development process, including planning, design, implementation, testing, and evaluation, delivering a working version of the software at the end of each cycle. This allows for continuous refinement based on feedback and evolving requirements, making the model highly flexible and adaptive. The Iterative Model is particularly useful for complex projects where requirements are not fully understood at the outset, as it enables teams to learn and improve with each iteration. However, it requires careful management to ensure iterations are completed on time and within scope.
+        </li>
+        <li>
+          <strong>C)</strong> Spiral Model:The Spiral Model is a risk-driven software development process that combines iterative and sequential approaches. It focuses on identifying and mitigating risks at every stage of development. The model is represented as a spiral with multiple loops, each loop consisting of four key phases: planning, risk analysis, engineering, and evaluation. The project evolves through these loops, allowing teams to incorporate user feedback and adapt to changing requirements. This makes the Spiral Model particularly effective for large, complex, or high-risk projects. However, its reliance on risk assessment and management requires skilled personnel, making it resource-intensive and more suitable for projects where risk minimization is critical.
+        </li>
+      </ul>
+      <p>
+        Agile SDLC methods like Scrum, Kanban, and FDD are ideal for flexibility
+        and improvement.
+      </p>
+    </section>
+
+    <!-- Course Concepts Section -->
+    <section id="concepts">
+      <h2>Software Development and Application Course Concepts</h2>
+      <ul>
+        <p>Among so many SDLC methodologies, the ones that are in the Agile classification are better. Among Agile SDLC methods, I have also a few suggestions:
+        </p>
+        <li><strong>A)</strong>Agile SDLC methodologies are preferred because they emphasize flexibility,collaboration, and adaptability to changing requirements, ensuring continuous improvement throughout the development process.</li>
+        <li><strong>B)</strong>Among Agile methods, frameworks like Scrum, Kanban, and Extreme Programming (XP) are particularly effective. Scrum focuses on iterative progress with defined roles and sprints, Kanban provides a visual workflow for better task management, and XP enhances software quality through practices like pair programming and continuous integration.</li>
+        <li><strong>C)</strong>My suggestions are to adopt Scrum for projects requiring structured iterations, Kanban for workflows needing visual tracking and minimal changes, and XP for projects where technical excellence and frequent delivery are priorities. Selecting the right method depends on the project requirements, team expertise, and organizational goals.</li>
+      </ul>
+    </section>
+
+    <section id="software development">
+      <h2>software development</h2>
+      <ul>
+        <p>In this software development and application course of SDLC, we learn the following:
+        </p>
+        <li><strong>A)</strong>In this course, we learn the fundamental phases of the SDLC (Software Development Life Cycle), including requirements gathering, design, implementation, testing, deployment, and maintenance, and how to apply them in real-world scenarios.</li>
+        <li><strong>B)</strong>We explore different SDLC methodologies, such as Waterfall, Agile, Iterative, and Spiral, understanding their strengths, weaknesses, and appropriate applications in various types of software projects.</li>
+        <li><strong>C)</strong>The course also covers best practices in project management, quality assurance, risk assessment, and communication, ensuring that students are well-prepared to manage development processes efficiently and deliver high-quality software solutions.
+        </li>
+      </ul>
+    </section>
+    <!-- CSS Section -->
+    <section id="CSS in Web Development">
+      <h2>CSS in Web Development</h2>
+      <p>I Have used CSS in this webpage and there are three ways to include CSS in a webpage as follows:</p>
+      <ul>
+        <li>
+          <strong>A)Inline CSS:</strong> Styling directly within an HTML element.
+        </li>
+        <li>
+          <strong>B)Internal CSS:</strong> Styles within a style tag in the head
+          section.
+        </li>
+        <li>
+          <strong>C)External CSS:</strong> Linking a separate stylesheet file.
+        </li>
+      </ul>
+      </section>
+      <section id="CSS in Web Development">
+        <h2>Reasons for using CSS</h2>
+        <p>The reasons CSS is used in a webpage are:</p>
+        <ul>
+        <li>
+          <strong>A)</strong>Separation of Content and Presentation: CSS allows for the separation of the content (HTML) from its visual presentation, making it easier to manage and maintain the structure of the webpage without affecting the design.
+        </li>
+        <li>
+          <strong>B)</strong>Improved Page Load Speed: By applying styles externally in a CSS file, the same styles can be reused across multiple pages, reducing the size of individual HTML files and improving page load times.
+        </li>
+        <li>
+          <strong>C)</strong>Enhanced Flexibility and Control: CSS provides powerful styling options for layout, colors, typography, and responsiveness, allowing web developers to create visually appealing and adaptive designs that work across different devices and screen sizes.
+        </li>
+      </ul>
+      </section>
+    <!-- JavaScript Section -->
+    <section id="JavaScript">
+      <h2>JavaScript in Web Development</h2>
+      <p>I Have used CSS in this webpage and there are three ways to include CSS in a webpage as follows.</p>
+      <ul>
+        <li><strong>A)</strong>Adding interactivity, such as dropdowns and sliders.</li>
+        <li><strong>B)</strong>Updating content dynamically without refreshing the page.</li>
+        <li><strong>C)</strong>Validating user inputs before form submission.</li>
+        <li><strong>D)</strong>Enhancing user experience with animations and transitions.</li>
+      </ul>
+    </section>
+    <section id="Contact">
+      <h2>Project Ownership and Contact</h2>
+      <p>
+        I've done this project by myself and accept the consequences if found
+        other ways.
+      </p>
+      <p>
+        You can reach me out at:
+        <input
+          style="width: 30%"
+          type="email"
+          id="contactEmail"
+          name="contactEmail"
+          placeholder="Enter your email"
+         value ="100003316@stud.srh-university.de" 
+        />
+      </p>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Enforce alphabet-only rule for Name, Middle Initial, and Last Name
+        const nameFields = ["firstName", "middleInitial", "lastName"];
+        nameFields.forEach((id) => {
+          const inputField = document.getElementById(id);
+          inputField.addEventListener("input", () => {
+            inputField.value = inputField.value.replace(/[^A-Za-z]/g, "");
+          });
+        });
+
+        // Enforce digit-only rule for Matriculation Number
+        const matriculationField = document.getElementById("matriculation");
+        matriculationField.addEventListener("input", () => {
+          matriculationField.value = matriculationField.value.replace(/[^0-9]/g, "");
+        });
+
+        // Form submission validation
+        document
+          .getElementById("feedbackForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            let isValid = true;
+            let errorMessage = "";
+
+            // Validate matriculation number length and format
+            const matriculationValue = matriculationField.value;
+            if (!/^[0-9]{9}$/.test(matriculationValue)) {
+              isValid = false;
+              errorMessage += "Matriculation Number must be exactly 9 digits.\n";
+            }
+
+            // Validate other input fields
+            const fieldsToValidate = [
+              { id: "firstName", label: "First Name" },
+              { id: "middleInitial", label: "Middle Initial" },
+              { id: "lastName", label: "Last Name" },
+              { id: "email", label: "Email" },
+              { id: "startDate", label: "Start Date" },
+              { id: "feedback", label: "Feedback" },
+              { id: "contactEmail", label: "Contact Email" },
+            ];
+
+            fieldsToValidate.forEach((field) => {
+              const input = form.querySelector(`#${field.id}`);
+              if (input && !input.checkValidity()) {
+                isValid = false;
+                errorMessage += `${field.label} is invalid.\n`;
+              }
+            });
+
+            // Ensure at least one source is checked
+            const sources = form.querySelectorAll(
+              'input[name="source"]:checked'
+            );
+            if (sources.length === 0) {
+              isValid = false;
+              errorMessage += "Please select at least one source.\n";
+            }
+
+            // Ensure at least one future plan is checked
+            const futures = form.querySelectorAll(
+              'input[name="future"]:checked'
+            );
+            if (futures.length === 0) {
+              isValid = false;
+              errorMessage += "Please select at least one future plan.\n";
+            }
+
+            // Display error messages or success alert
+            if (!isValid) {
+              alert(errorMessage);
+            } else {
+              alert("Form submitted successfully!");
+              form.submit(); // Uncomment this line to allow real submission
+            }
+          });
+      });
+  </body>
+</html>
